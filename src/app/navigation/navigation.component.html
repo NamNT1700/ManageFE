@@ -1,0 +1,8 @@
+<mat-button-toggle-group>
+    <div style="display: flex; flex-direction: column">
+        
+        <ng-container *ngFor="let item of listNavigation">
+                <mat-button-toggle (click)="handleNavigate(item.path)" style="width: 275px ;"  >{{item.label}}</mat-button-toggle>
+        </ng-container>
+    </div>
+    </mat-button-toggle-group>

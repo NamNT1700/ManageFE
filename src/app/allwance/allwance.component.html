@@ -1,0 +1,13 @@
+<ng-container>
+<table mat-table [dataSource]="dataSource" style="width:100%; height: 600px; overflow: auto">
+    <ng-container *ngFor="let item of columns" [matColumnDef]="item.name">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> {{item.label}}</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element[item.name]}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data</td>
+    </tr>
+</table>
+</ng-container>
